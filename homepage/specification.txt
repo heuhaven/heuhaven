@@ -1,0 +1,24 @@
+HTML tags:
+1. <nav>
+2. <a>
+3. <h1>
+4. <h2>
+5. <section>
+6. <p>
+7. <div>
+8. <img>
+9. <button>
+10. <script>
+
+CSS properties:
+1. background-image
+2. font-size
+3. color
+4. margin
+5. position
+
+JavaScript:
+I used JavaScript to make a button interactive by changing the introductory text when clicked and say smtg different
+
+Bootstrap:
+I used Bootstrap by including its CSS and JavaScript library in my website.
