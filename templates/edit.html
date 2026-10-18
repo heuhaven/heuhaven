@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Artwork | HEUHAVEN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>HEUHAVEN</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Edit artwork</h2>
+
+        <form method="POST">
+            <label for="title">Artwork title</label>
+            <input type="text" id="title" name="title"
+                   value="{{ artwork.title }}" required>
+
+            <label for="category">Category</label>
+            <input type="text" id="category" name="category"
+                   value="{{ artwork.category }}" required>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description"
+                      rows="4">{{ artwork.description }}</textarea>
+
+            <button type="submit">Save changes</button>
+        </form>
+
+        <p><a href="/gallery">Back to gallery</a></p>
+    </main>
+</body>
+</html>
