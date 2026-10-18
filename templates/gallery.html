@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYJwRjWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+        <title>Gallery | HEUHAVEN</title>
+    </head>
+
+    <body>
+
+        <nav>
+            <a href="{{ url_for('index') }}">HOME</a>
+            <a href="{{ url_for('gallery') }}">GALLERY</a>
+            <a href="{{ url_for('about') }}">ABOUT</a>
+            <a href="{{ url_for('contact') }}">CONTACT</a>
+            <a href="{{ url_for('add') }}">ADD ARTWORK</a>
+        </nav>
+
+        <section class="art-gallery">
+
+            <h1>HEUHAVEN</h1>
+
+            {% for artwork in artworks %}
+
+            <div class="art-card">
+
+                <img src="{{ url_for('static', filename=artwork.image) }}" alt="{{ artwork.title }}">
+
+                <div class="art-info">
+
+                    <div class="view-mode" id="view-{{ artwork.id }}">
+
+                        <h3>{{ artwork.title }}</h3>
+
+                        <p>{{ artwork.category }}</p>
+
+                        <p>{{ artwork.description }}</p>
+
+                        <button type="button" onclick="showEdit({{ artwork.id }})">
+                            EDIT
+                        </button>
+
+                        <form action="{{ url_for('delete', id=artwork.id) }}" method="post">
+                            <button type="submit">DELETE</button>
+                        </form>
+
+                    </div>
+
+
+                    <div class="edit-mode" id="edit-{{ artwork.id }}" style="display: none;">
+
+                        <form action="{{ url_for('edit', id=artwork.id) }}" method="post">
+
+                            <label>Title</label>
+                            <input type="text" name="title" value="{{ artwork.title }}" required>
+
+                            <label>Category</label>
+                            <input type="text" name="category" value="{{ artwork.category }}" required>
+
+                            <label>Description</label>
+                            <textarea name="description">{{ artwork.description }}</textarea>
+
+                            <button type="submit">SAVE</button>
+
+                            <button type="button" onclick="hideEdit({{ artwork.id }})">
+                                CANCEL
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </section>
+
+        <script>
+            function showEdit(id) {
+                document.querySelector("#view-" + id).style.display = "none";
+                document.querySelector("#edit-" + id).style.display = "block";
+            }
+
+            function hideEdit(id) {
+                document.querySelector("#edit-" + id).style.display = "none";
+                document.querySelector("#view-" + id).style.display = "block";
+            }
+        </script>
+
+    </body>
+</html>
