@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+        <title>My Webpage</title>
+    </head>
+    <script>
+    function changeText() {
+        document.querySelector(".home-text").innerHTML = "welcome to heuhaven!";
+    }
+    </script>
+
+<script>
+    function changeText() {
+        document.querySelector(".home-text").innerHTML =
+            "welcome to heuhaven :)";
+    }
+</script>
+    <body class="home-page">
+         <h1>HEUHAVEN</h1>
+        <nav>
+            <a href="#designer">Meet the Designer</a>
+            <a href="{{ url_for('gallery') }}">GALLERY</a>
+            <a href="{{ url_for('about') }}">ABOUT</a>
+            <a href="{{ url_for('contact') }}">CONTACT</a>
+        </nav>
+
+        <section  class="home">
+
+            <p class="home-text">heuhaven is my little corner of the internet where paint, random ideas<br> and whatever is going on in my head turn into art.<br>a place to experiment, make pretty things, make weird things, and just have fun with it.<br> here in the gallery, i’m sharing a few of my artworks <br>— little pieces of what i’ve made along the way.
+</p>
+        </section>
+
+        <section id = "designer" class ="designer">
+            <div class="designer-image">
+                <img src="{{ url_for('static', filename='dipu.jpg') }}" alt="...">
+            </div>
+            <div class="designer-text">
+                <h2>meet the designer</h2>
+                <p>Hi! I'm Divya, the designer behind this website.</p>
+            </div>
+        </section>
+    </body>
+</html>
