@@ -1,0 +1,176 @@
+body{
+    background-color: olive;
+}
+h1{
+    text-align: center;
+    color: navy;
+    font-family: Georgia, sans-serif;
+}.designer {
+    display: flex;
+    width: 100%;
+    min-height: 450px;
+}
+
+.designer-image {
+    width: 50%;
+}
+
+.designer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.designer-text {
+    width: 50%;
+    background-color: #5a321f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.designer-text h2 {
+    margin-bottom: 20px;
+}
+.home {
+    background-image: url("/static/heuhaven.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 550px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+}
+nav {
+    background-color:rgba(232, 154, 181, 0.8);
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #5a321f;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+h1 {
+    text-align: center;
+    color:pink;
+    margin: 0;
+    padding: 25px 0;
+
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-weight: bold;
+    font-size: 50px;
+}
+.art-gallery {
+    padding: 50px;
+}
+
+.art-gallery h2 {
+    text-align: center;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 42px;
+    color: #6b3fa0;
+    margin-bottom: 35px;
+}
+
+.art-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #5a321f;
+    color: white;
+}
+
+.art-card img {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.art-card h3,
+.art-card p,
+.art-card a,
+.art-card form {
+    margin-left: 0;
+}
+
+.art-card > div {
+    flex: 1;
+}
+.art-info {
+    flex: 1;
+}
+
+.art-info a,
+.art-info button {
+    margin-top: 10px;
+}
+.art-info a {
+    display: inline-block;
+    background-color: #d8c7a3;
+    color: #5a321f;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.art-info button {
+    background-color: #7b4a2f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.art-info a:hover {
+    background-color: #c4b187;
+}
+
+.art-info button:hover {
+    background-color: #5a321f;
+}
+form input,
+form textarea {
+    background-color: #d8c7a3;
+    color: #5a321f;
+    border: 2px solid #7b4a2f;
+    padding: 10px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #6b3fa0;
+}
+form label {
+    color: #5a321f;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+.edit-title {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    color: #5a321f;
+    background-color: transparent;
+    padding: 15px 0;
+}
