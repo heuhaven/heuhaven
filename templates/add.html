@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Artwork</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <a href="{{ url_for('index') }}">HOME</a>
+        <a href="{{ url_for('gallery') }}">GALLERY</a>
+        <a href="{{ url_for('about') }}">ABOUT</a>
+        <a href="{{ url_for('contact') }}">CONTACT</a>
+        <a href="{{ url_for('add') }}">ADD ARTWORK</a>
+    </nav>
+
+    <h1>ADD ARTWORK</h1>
+
+    <form action="{{ url_for('add') }}" method="post" enctype="multipart/form-data">
+
+        <label>Title:</label>
+        <input type="text" name="title"required>
+
+        <br><br>
+
+        <label>Category:</label>
+        <input type="text" name="category" required>
+
+        <br><br>
+
+        <label>Description:</label>
+        <textarea name="description"></textarea>
+
+        <br><br>
+
+        <label>Image:</label>
+        <input type="file" name="image" accept="image/*" required>
+
+        <br><br>
+
+        <button type="submit">ADD ARTWORK</button>
+
+    </form>
+
+</body>
+</html>
